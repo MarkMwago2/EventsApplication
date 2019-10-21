@@ -4,66 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EventsActivity">
+    android:padding="20sp"
+    tools:context=".AddEventsActivity">
 
     <TextView
+        android:id="@+id/Events"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="List your events here"
-        android:textSize="40dp"
-        android:id="@+id/Events"/>
+        android:textSize="40dp" />
 
     <EditText
+        android:id="@+id/Titletext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Event title"
         android:layout_below="@id/Events"
-        android:id="@+id/Titletext"
-        android:inputType="text"/>
+        android:hint="Event title"
+        android:inputType="text" />
 
     <EditText
+        android:id="@+id/startdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/startdate"
-        android:text="Start Date"
         android:layout_below="@+id/Titletext"
-        android:inputType="text"/>
+        android:hint="Start Date"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/enddate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Titletext"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:text="End Date"
-        android:inputType="text"
-        android:layout_alignParentEnd="true"/>
+        android:hint="End Date"
+        android:inputType="text" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/starttime"
-        android:text="Start Time"
-        android:layout_below="@+id/startdate"
-        android:inputType="text"/>
-
-    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/startdate"
+        android:hint="Start Time"
+        android:inputType="text" />
+
+    <EditText
         android:id="@+id/endtime"
-        android:text="End Time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/enddate"
         android:layout_alignParentRight="true"
-        android:inputType="text"/>
+        android:hint="End Time"
+        android:inputType="text" />
 
     <EditText
+        android:id="@+id/Descriptionbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Descriptionbox"
-        android:text="Event Description"
-        android:layout_centerInParent="true"
         android:layout_below="@id/starttime"
-        android:inputType="text"/>
+        android:layout_centerInParent="true"
+        android:hint="Event Description"
+        android:inputType="text" />
 
 
 </RelativeLayout>
