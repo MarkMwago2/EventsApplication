@@ -21,21 +21,21 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="76dp"
-        android:text="What would you fancy?"
+        android:text="What's on your mind?"
         android:textColor="@color/colorAccent" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/AddEvent"
-        android:text="Add Event"
+        android:text="Add Events"
         android:layout_centerInParent="true"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ViewEvent"
-        android:text="View Event"
+        android:text="View Events"
         android:layout_below="@id/AddEvent"
         android:layout_centerInParent="true"/>
 

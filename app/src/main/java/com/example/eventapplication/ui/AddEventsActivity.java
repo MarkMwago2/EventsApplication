@@ -1,4 +1,4 @@
-package com.example.eventapplication;
+package com.example.eventapplication.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.eventapplication.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class AddEventsActivity extends AppCompatActivity {
     private Button mSaveButton;
@@ -17,10 +21,15 @@ public class AddEventsActivity extends AppCompatActivity {
     private EditText mendtime;
     private EditText mdescritption;
 
+    DatabaseReference databaseEvents;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
+
+        databaseEvents = FirebaseDatabase.getInstance().getReference("Events");
+
         mSaveButton = (Button) findViewById(R.id.Savebutton);
         mTitleText = (EditText) findViewById(R.id.Titletext);
         mstartdate = (EditText) findViewById(R.id.startdate);
@@ -33,21 +42,23 @@ public class AddEventsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(AddEventsActivity.this, ViewEventsActivity.class);
-                startActivity(intent1);
-                intent1.putExtra("Title", mTitleText.getText().toString());
-                startActivity(intent1);
-                intent1.putExtra("StartDate", mstartdate.getText().toString());
-                startActivity(intent1);
-                intent1.putExtra("EndDate", menddate.getText().toString());
-                startActivity(intent1);
-                intent1.putExtra("StartTime", mstarttime.getText().toString());
-                startActivity(intent1);
-                intent1.putExtra("EndTime", mendtime.getText().toString());
-                startActivity(intent1);
-                intent1.putExtra("Description", mdescritption.getText().toString());
-                startActivity(intent1);
+               addEvents();
             }
         });
+    }
+    private void addEvents(){
+      String title = mTitleText.getText().toString().trim();
+      String startdate = mstartdate.getText().toString().trim();
+      String enddate = menddate.getText().toString().trim();
+      String starttime = mstarttime.getText().toString().trim();
+      String endtime = mendtime.getText().toString().trim();
+      String description = mdescritption.getText().toString().trim();
+
+      String eventid = databaseEvents.push().getKey();
+
+      Events events = new Events(eventid, title, startdate, enddate, starttime, endtime, description);
+
+      databaseEvents.child(eventid).setValue(events);
     }
 }
 

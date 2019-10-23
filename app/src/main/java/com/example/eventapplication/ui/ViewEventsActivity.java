@@ -1,8 +1,12 @@
-package com.example.eventapplication;
+package com.example.eventapplication.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.example.eventapplication.R;
 
 public class ViewEventsActivity extends AppCompatActivity {
     TextView events;
@@ -13,6 +17,8 @@ public class ViewEventsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_events);
         events = (TextView) findViewById(R.id.EventText);
 
+        Intent intent = getIntent();
+
         events.setText(getIntent().getStringExtra("Title"));
         events.setText(getIntent().getStringExtra("StartDate"));
         events.setText(getIntent().getStringExtra("EndDate"));
@@ -21,5 +27,8 @@ public class ViewEventsActivity extends AppCompatActivity {
         events.setText(getIntent().getStringExtra("Description"));
 
 
+    }
+
+    public static class Events {
     }
 }

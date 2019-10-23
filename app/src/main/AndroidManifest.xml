@@ -10,17 +10,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewEventsActivity">
+        <activity android:name=".ui.ViewEventsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.eventapplication.MainActivity"></meta-data>
+                android:value="com.example.eventapplication.ui.MainActivity"></meta-data>
         </activity>
-        <activity android:name=".AddEventsActivity">
+        <activity android:name=".ui.AddEventsActivity">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.eventapplication.MainActivity"></meta-data>
+            android:value="com.example.eventapplication.ui.MainActivity"></meta-data>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

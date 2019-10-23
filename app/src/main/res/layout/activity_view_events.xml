@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewEventsActivity">
+    tools:context=".ui.ViewEventsActivity">
 
     <TextView
         android:id="@+id/Textview"
@@ -12,11 +12,12 @@
         android:layout_height="wrap_content"
         android:text="View Events"
         android:textColor="@color/colorAccent"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textSize="60dp"/>
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/EventText"
         android:layout_below="@+id/Textview"
         android:paddingTop="20dp"

@@ -1,4 +1,4 @@
-package com.example.eventapplication;
+package com.example.eventapplication.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,8 +8,7 @@ import android.view.View;
 
 import android.widget.Button;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import com.example.eventapplication.R;
 
 
 public class MainActivity extends AppCompatActivity {
