@@ -17,8 +17,6 @@ public class ViewEventsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_events);
         events = (TextView) findViewById(R.id.EventText);
 
-        Intent intent = getIntent();
-
         events.setText(getIntent().getStringExtra("Title"));
         events.setText(getIntent().getStringExtra("StartDate"));
         events.setText(getIntent().getStringExtra("EndDate"));
